@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Website Feature Highlight - InAmigos Foundation Design Concept</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- DESIGN INSIGHTS FLOATING CONTROL PANEL -->
+    <div class="insight-header-panel">
+        <div class="container insight-header-container">
+            <div class="logo-group">
+                <img src="logo_light.jpg" alt="InAmigos Logo" style="height: 32px; object-fit: contain;">
+                <span class="badge">Mockup Studio Concept</span>
+            </div>
+            
+            <div class="controls-group">
+                <button id="toggle-insights-btn" class="btn-insight-toggle">
+                    <span class="indicator-dot pulse"></span>
+                    <span>Toggle Design Insights Mode</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN WEBSITE HEADER -->
+    <header class="site-header">
+        <div class="container site-nav">
+            <div class="site-logo">
+                <img src="logo_dark.jpg" alt="InAmigos Foundation Logo" style="height: 48px; object-fit: contain;">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#campaigns">Campaigns</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#volunteer">Volunteer</a></li>
+                    <li><a href="#testimonials">Impact Stories</a></li>
+                </ul>
+            </nav>
+            <a href="#donate" class="nav-btn">Donate Now</a>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-sec annotated-section" id="hero">
+        <!-- Design Insight Marker & Card -->
+        <div class="insight-marker insight-pos-top-right">1</div>
+        <div class="insight-card insight-pos-top-right">
+            <h4>💡 Hero Panel & Visual Background</h4>
+            <p><strong>Purpose:</strong> Establish instant emotional connection, credibility, and brand cause with the visitor.</p>
+            <p><strong>Design Choices:</strong> A high-quality full-bleed photographic background representing community unity, left-aligned typography with orange accents, clear dual CTAs for volunteer onboarding and donation, and a scroll cue to encourage exploration.</p>
+            <div>
+                <span class="insight-badge-pill">UX: Emotional Pitch</span>
+                <span class="insight-badge-pill">Trust Loop: +50%</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">Youth-Led Social Impact</span>
+                <h1>Creating Change Through <span>Compassion & Community</span></h1>
+                <p class="hero-description">InAmigos Foundation is a non-profit organization uniting passionate minds across India to uplift underrepresented ecosystems through education, relief, and empowerment campaigns.</p>
+                <div class="hero-ctas">
+                    <a href="#volunteer" class="btn-primary">Become a Volunteer &rarr;</a>
+                    <a href="#campaigns" class="btn-secondary">Explore Projects</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator cue -->
+        <div class="scroll-indicator" onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})">
+            <span>Scroll to Explore</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- KEY METRICS STRIP -->
+    <div class="hero-metrics-strip">
+        <div class="container strip-grid">
+            <div class="strip-item">
+                <div class="strip-val" id="metric-lives">15,400+</div>
+                <div class="strip-lbl">Beneficiaries Fed & Educated</div>
+            </div>
+            <div class="strip-item">
+                <div class="strip-val">120+</div>
+                <div class="strip-lbl">Active Local Campaigns</div>
+            </div>
+            <div class="strip-item">
+                <div class="strip-val">92%</div>
+                <div class="strip-lbl">Direct Aid Efficiency Rate</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. SMART DONATION WIDGET -->
+    <section class="donate-sec annotated-section" id="donate">
+        <!-- Design Insight Marker & Card -->
+        <div class="insight-marker insight-pos-top-left">2</div>
+        <div class="insight-card insight-pos-top-left">
+            <h4>💡 Smart Donation Widget</h4>
+            <p><strong>Purpose:</strong> Maximize average donation amounts and transition one-time donors into recurring monthly supporters.</p>
+            <p><strong>Design Choices:</strong> Pre-selected amount buttons reduce cognitive load. A dynamic outcome calculator converts abstract amounts into real, tangible impacts (e.g. "feeds 5 kids").</p>
+            <div>
+                <span class="insight-badge-pill">UX: Frictionless</span>
+                <span class="insight-badge-pill">AOV Increase: +40%</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag">Take Action</span>
+                <h2 class="section-title">Support Our Cause</h2>
+                <p class="section-subtitle">Your generosity fuels our mission. Choose a giving plan that works for you.</p>
+            </div>
+            
+            <div class="donation-grid">
+                <div class="donation-visual-panel">
+                    <h3>Every contribution makes an immediate impact</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 24px; margin-top: 12px;">We maintain 100% financial transparency. Regular audit reports are published monthly for all our campaigns and operations.</p>
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <span style="color: var(--color-accent); font-size: 1.5rem; font-weight: bold;">✔ Secured Payment</span>
+                        <span style="color: var(--text-muted);">256-Bit SSL Encrypted Transactions</span>
+                    </div>
+                </div>
+                
+                <div class="donation-card-box">
+                    <div class="donation-toggle-group">
+                        <button class="toggle-btn active" id="btn-once">One-Time</button>
+                        <button class="toggle-btn" id="btn-monthly">Monthly Partner</button>
+                    </div>
+                    
+                    <div class="amount-selector">
+                        <button class="amount-btn" data-value="10">$10</button>
+                        <button class="amount-btn active" data-value="25">$25</button>
+                        <button class="amount-btn" data-value="50">$50</button>
+                        <button class="amount-btn" data-value="100">$100</button>
+                    </div>
+                    
+                    <div class="custom-amount-box">
+                        <input type="number" class="custom-amount-input" id="custom-amount" placeholder="Other Amount" value="25" min="5">
+                        <span class="currency-symbol">$</span>
+                    </div>
+                    
+                    <div class="impact-preview-box">
+                        <div class="impact-icon">🍲</div>
+                        <div>
+                            <div class="impact-text-outcome" id="impact-outcome-text">Provides 5 children with healthy meals for a full week.</div>
+                            <div class="impact-subtext">Calculated based on your selected donation amount.</div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-donate-submit" id="btn-donate-action">Donate $25 Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CAMPAIGNS & PROGRESS SHOWCASE -->
+    <section class="campaigns-sec annotated-section" id="campaigns">
+        <!-- Design Insight Marker & Card -->
+        <div class="insight-marker insight-pos-top-right">3</div>
+        <div class="insight-card insight-pos-top-right">
+            <h4>💡 Campaign & Progress Showcase</h4>
+            <p><strong>Purpose:</strong> Build urgency and direct focus toward specific, actionable projects.</p>
+            <p><strong>Design Choices:</strong> High visual cards with custom category tags, detailed progress indicators showing percentage raised, and a countdown timer to build constructive urgency.</p>
+            <div>
+                <span class="insight-badge-pill">UX: Urgency</span>
+                <span class="insight-badge-pill">Transparency: 100%</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" style="color: var(--color-primary);">Urgent Campaigns</span>
+                <h2 class="section-title">Current Crowdfunding Projects</h2>
+                <p class="section-subtitle">Read, evaluate, and contribute to targeted initiatives that urgently require funding.</p>
+            </div>
+            
+            <div class="campaigns-grid">
+                <!-- Card 1 -->
+                <div class="campaign-card">
+                    <div class="campaign-image-container">
+                        <img src="rural_digital_literacy.png" alt="Children learning on laptops in a rural Indian school" class="campaign-image">
+                        <span class="campaign-tag">Education</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h4 class="campaign-title">Rural Digital Literacy</h4>
+                        <p class="campaign-desc">Providing desktop computers, internet access, and teacher training to 5 village schools.</p>
+                        
+                        <div class="progress-container">
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-progress="83"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Raised: <strong>$12,450</strong></span>
+                                <span>Goal: $15,000 (83%)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="campaign-card-footer">
+                            <span class="campaign-days-left">⏳ 6 days left</span>
+                            <button class="btn-card-action">Support</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="campaign-card">
+                    <div class="campaign-image-container">
+                        <img src="clean_water_borewell.png" alt="Clean water splashing from a village hand pump" class="campaign-image">
+                        <span class="campaign-tag">Sanitation</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h4 class="campaign-title">Clean Water Borewells</h4>
+                        <p class="campaign-desc">Drilling two community borewells and installing filter systems in water-stressed sectors.</p>
+                        
+                        <div class="progress-container">
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-progress="45"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Raised: <strong>$3,600</strong></span>
+                                <span>Goal: $8,000 (45%)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="campaign-card-footer">
+                            <span class="campaign-days-left">⏳ 14 days left</span>
+                            <button class="btn-card-action">Support</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="campaign-card">
+                    <div class="campaign-image-container">
+                        <img src="vocational_skill_center.png" alt="Women learning vocational sewing skills" class="campaign-image">
+                        <span class="campaign-tag">Livelihood</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h4 class="campaign-title">Vocational Skill Center</h4>
+                        <p class="campaign-desc">Equipping youth and single mothers with tailoring, coding, and craftsmanship training.</p>
+                        
+                        <div class="progress-container">
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-progress="49"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Raised: <strong>$9,800</strong></span>
+                                <span>Goal: $20,000 (49%)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="campaign-card-footer">
+                            <span class="campaign-days-left">⏳ 22 days left</span>
+                            <button class="btn-card-action">Support</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SEAMLESS VOLUNTEER ONBOARDING -->
+    <section class="volunteer-sec annotated-section" id="volunteer">
+        <!-- Design Insight Marker & Card -->
+        <div class="insight-marker insight-pos-top-left">4</div>
+        <div class="insight-card insight-pos-top-left">
+            <h4>💡 Seamless Volunteer Form</h4>
+            <p><strong>Purpose:</strong> Build a high-quality community network with zero onboarding friction.</p>
+            <p><strong>Design Choices:</strong> Low fields form layout, pre-defined skill matching fields, and clear social value highlights to prompt user registration in minimal steps.</p>
+            <div>
+                <span class="insight-badge-pill">UX: low-friction</span>
+                <span class="insight-badge-pill">Completion: +50%</span>
+            </div>
+        </div>
+
+        <div class="container volunteer-grid">
+            <div class="volunteer-pitch">
+                <h2>We need your skills & passion</h2>
+                <p>Donations fund projects, but people bring them to life. Whether you are a professional educator, tech designer, or event organizer, there is a space for you here.</p>
+                
+                <div class="volunteer-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-check">✔</span>
+                        <span>Receive verifiable experience certification</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✔</span>
+                        <span>Flexible hour scheduling to fit your calendar</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✔</span>
+                        <span>Join a global network of changemakers</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-mock-box">
+                <form id="volunteer-form" onsubmit="event.preventDefault(); alert('Application submitted successfully!');">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="vol-name">Full Name</label>
+                            <input type="text" id="vol-name" class="form-control" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="vol-email">Email Address</label>
+                            <input type="email" id="vol-email" class="form-control" placeholder="jane@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="vol-skill">Core Skill / Focus Area</label>
+                        <select id="vol-skill" class="form-control" required>
+                            <option value="" disabled selected>Select your skill...</option>
+                            <option value="teaching">Education & Mentorship</option>
+                            <option value="tech">Coding, Design & Web Ops</option>
+                            <option value="marketing">Social Media & Writing</option>
+                            <option value="events">Event Coordination & Logistics</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="vol-hours">Availability Plan</label>
+                        <select id="vol-hours" class="form-control" required>
+                            <option value="" disabled selected>Select hours...</option>
+                            <option value="2-5">2 - 5 Hours / Week</option>
+                            <option value="5-10">5 - 10 Hours / Week</option>
+                            <option value="flex">Flexible / Project-based</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn-form-submit">Submit Volunteer Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SOCIAL PROOF & TESTIMONIALS -->
+    <section class="testimonials-sec annotated-section" id="testimonials">
+        <!-- Design Insight Marker & Card -->
+        <div class="insight-marker insight-pos-top-right">5</div>
+        <div class="insight-card insight-pos-top-right">
+            <h4>💡 Social Proof & Testimonials</h4>
+            <p><strong>Purpose:</strong> Build verifiable trust and combat cynicism concerning charitable transparency.</p>
+            <p><strong>Design Choices:</strong> Dynamic layout featuring verified badge tags, contrasting roles (showing views from donor, volunteer, and direct beneficiary) for a 360-degree validation loop.</p>
+            <div>
+                <span class="insight-badge-pill">UX: Social Proof</span>
+                <span class="insight-badge-pill">Trust Rate: +65%</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag" style="color: var(--color-accent);">Testimonials</span>
+                <h2 class="section-title">Why People Trust Us</h2>
+                <p class="section-subtitle">Real feedback from donors, volunteers, and the communities we serve daily.</p>
+            </div>
+            
+            <div class="testimonials-carousel">
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The coding program at InAmigos completely changed my career path. The instructors were supportive, and they provided the laptop that enabled me to get my first developer internship."</p>
+                    <div class="testimonial-user">
+                        <div class="user-avatar-placeholder">RS</div>
+                        <div class="user-info">
+                            <h5>Rahul Sharma</h5>
+                            <span class="user-role">Beneficiary Student</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I love the monthly donation structure. I can see in my user dashboard exactly how my funds are allocated to clean water projects. The campaigns progress bar is update-driven and honest."</p>
+                    <div class="testimonial-user">
+                        <div class="user-avatar-placeholder">SM</div>
+                        <div class="user-info">
+                            <h5>Sarah M.</h5>
+                            <span class="user-role">Monthly Donor Partner</span>
+                            <br><span class="donor-badge">Gold Partner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Teaching digital skills to young kids in the village center was the highlight of my year. The onboarding tools were clean and direct, allowing me to teach my first class in week one."</p>
+                    <div class="testimonial-user">
+                        <div class="user-avatar-placeholder">DK</div>
+                        <div class="user-info">
+                            <h5>David K.</h5>
+                            <span class="user-role">Volunteer Educator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER MOCK -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <div class="site-logo" style="margin-bottom: 16px;">
+                    <img src="logo_dark.jpg" alt="InAmigos Foundation Logo" style="height: 42px; object-fit: contain;">
+                </div>
+                <p>We are a registered non-profit organization dedicated to fostering positive growth through direct educational support and resource initiatives.</p>
+            </div>
+            <div class="footer-col">
+                <h6>Organization</h6>
+                <ul>
+                    <li><a href="#campaigns">About Us</a></li>
+                    <li><a href="#campaigns">Financial Transparency</a></li>
+                    <li><a href="#campaigns">Annual Reports</a></li>
+                    <li><a href="#campaigns">Press Room</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h6>Join In</h6>
+                <ul>
+                    <li><a href="#volunteer">Volunteer Program</a></li>
+                    <li><a href="#donate">Corporate Donors</a></li>
+                    <li><a href="#donate">Sponsorship Plans</a></li>
+                    <li><a href="#donate">Community Chapters</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h6>Contact</h6>
+                <ul>
+                    <li>📧 info@inamigos.org</li>
+                    <li>📞 +1 (800) 555-0199</li>
+                    <li>📍 45 Wall Street, New York, NY</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 InAmigos Foundation Mockup. Crafted for Task 4.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="#campaigns">Privacy Policy</a>
+                <a href="#campaigns">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
