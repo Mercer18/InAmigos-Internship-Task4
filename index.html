@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGO Website Feature Highlight - InAmigos Foundation Design Concept</title>
+    <title>NGO Website Feature Highlight - InAmigos Foundation Concept</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,8 @@
     <div class="insight-header-panel">
         <div class="container insight-header-container">
             <div class="logo-group">
-                <img src="logo_light.jpg" alt="InAmigos Logo" style="height: 32px; object-fit: contain;">
+                <!-- Using logo_dark (white logo) since header panel background is dark slate #1C1917 -->
+                <img src="logo_dark.jpg" alt="InAmigos Logo">
                 <span class="badge">Mockup Studio Concept</span>
             </div>
             
@@ -29,17 +30,17 @@
     <header class="site-header">
         <div class="container site-nav">
             <div class="site-logo">
-                <img src="logo_dark.jpg" alt="InAmigos Foundation Logo" style="height: 48px; object-fit: contain;">
+                <img src="logo_dark.jpg" alt="InAmigos Foundation Logo">
             </div>
-            <nav>
+            <nav class="hidden md:flex">
                 <ul class="nav-links">
                     <li><a href="#campaigns">Campaigns</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#donate">About Us</a></li>
                     <li><a href="#volunteer">Volunteer</a></li>
                     <li><a href="#testimonials">Impact Stories</a></li>
                 </ul>
             </nav>
-            <a href="#donate" class="nav-btn">Donate Now</a>
+            <button class="nav-btn" onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})">Donate Now</button>
         </div>
     </header>
 
@@ -61,10 +62,13 @@
             <div class="hero-content">
                 <span class="hero-tag">Youth-Led Social Impact</span>
                 <h1>Creating Change Through <span>Compassion & Community</span></h1>
-                <p class="hero-description">InAmigos Foundation is a non-profit organization uniting passionate minds across India to uplift underrepresented ecosystems through education, relief, and empowerment campaigns.</p>
+                <p class="hero-description">We empower underrepresented communities across India through education, sustainable infrastructure, and livelihood programs that create lasting positive change.</p>
                 <div class="hero-ctas">
-                    <a href="#volunteer" class="btn-primary">Become a Volunteer &rarr;</a>
-                    <a href="#campaigns" class="btn-secondary">Explore Projects</a>
+                    <button class="btn-primary-accent" onclick="document.getElementById('volunteer').scrollIntoView({behavior: 'smooth'})">
+                        Become a Volunteer
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                    <button class="btn-outline-white" onclick="document.getElementById('campaigns').scrollIntoView({behavior: 'smooth'})">Explore Projects</button>
                 </div>
             </div>
         </div>
@@ -72,9 +76,7 @@
         <!-- Scroll Indicator cue -->
         <div class="scroll-indicator" onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})">
             <span>Scroll to Explore</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
+            <i data-lucide="chevron-down"></i>
         </div>
     </section>
 
@@ -111,20 +113,11 @@
         </div>
 
         <div class="container">
-            <div class="section-title-wrap">
-                <span class="section-tag">Take Action</span>
-                <h2 class="section-title">Support Our Cause</h2>
-                <p class="section-subtitle">Your generosity fuels our mission. Choose a giving plan that works for you.</p>
-            </div>
-            
             <div class="donation-grid">
                 <div class="donation-visual-panel">
-                    <h3>Every contribution makes an immediate impact</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 24px; margin-top: 12px;">We maintain 100% financial transparency. Regular audit reports are published monthly for all our campaigns and operations.</p>
-                    <div style="display: flex; gap: 16px; align-items: center;">
-                        <span style="color: var(--color-accent); font-size: 1.5rem; font-weight: bold;">✔ Secured Payment</span>
-                        <span style="color: var(--text-muted);">256-Bit SSL Encrypted Transactions</span>
-                    </div>
+                    <span class="tag-action">Take Action</span>
+                    <h2>Support Our Cause</h2>
+                    <p>Your contribution directly funds meals, education materials, and community infrastructure. We maintain full financial transparency with 92% of donations going directly to program delivery.</p>
                 </div>
                 
                 <div class="donation-card-box">
@@ -140,16 +133,15 @@
                         <button class="amount-btn" data-value="100">$100</button>
                     </div>
                     
-                    <div class="custom-amount-box">
+                    <div class="custom-amount-box" style="margin-bottom: 20px;">
                         <input type="number" class="custom-amount-input" id="custom-amount" placeholder="Other Amount" value="25" min="5">
-                        <span class="currency-symbol">$</span>
                     </div>
                     
                     <div class="impact-preview-box">
-                        <div class="impact-icon">🍲</div>
+                        <div class="impact-icon">🍚</div>
                         <div>
                             <div class="impact-text-outcome" id="impact-outcome-text">Provides 5 children with healthy meals for a full week.</div>
-                            <div class="impact-subtext">Calculated based on your selected donation amount.</div>
+                            <div class="impact-subtext" style="color: #D97706; font-size: 0.75rem; margin-top: 2px;">Calculated based on your selected donation amount.</div>
                         </div>
                     </div>
                     
@@ -174,35 +166,37 @@
         </div>
 
         <div class="container">
-            <div class="section-title-wrap">
-                <span class="section-tag" style="color: var(--color-primary);">Urgent Campaigns</span>
-                <h2 class="section-title">Current Crowdfunding Projects</h2>
-                <p class="section-subtitle">Read, evaluate, and contribute to targeted initiatives that urgently require funding.</p>
+            <div class="campaigns-header">
+                <h2>Active Campaigns</h2>
+                <p>Support ongoing projects making real impact in communities</p>
             </div>
             
             <div class="campaigns-grid">
                 <!-- Card 1 -->
                 <div class="campaign-card">
                     <div class="campaign-image-container">
-                        <img src="rural_digital_literacy.png" alt="Children learning on laptops in a rural Indian school" class="campaign-image">
+                        <img src="rural_digital_literacy.png" alt="Children learning on laptops" class="campaign-image">
                         <span class="campaign-tag">Education</span>
                     </div>
                     <div class="campaign-details">
-                        <h4 class="campaign-title">Rural Digital Literacy</h4>
-                        <p class="campaign-desc">Providing desktop computers, internet access, and teacher training to 5 village schools.</p>
+                        <h3 class="campaign-title">Rural Digital Literacy</h3>
+                        <p class="campaign-desc">Bringing technology education to underserved villages, empowering youth with digital skills for the future.</p>
                         
                         <div class="progress-container">
                             <div class="progress-bar-track">
                                 <div class="progress-bar-fill" data-progress="83"></div>
                             </div>
                             <div class="progress-stats">
-                                <span>Raised: <strong>$12,450</strong></span>
-                                <span>Goal: $15,000 (83%)</span>
+                                <span class="text-[#059669]">Raised $12,450</span>
+                                <span class="text-slate-500">of $15,000 (83%)</span>
                             </div>
                         </div>
                         
                         <div class="campaign-card-footer">
-                            <span class="campaign-days-left">⏳ 6 days left</span>
+                            <span class="campaign-days-left">
+                                <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
+                                <span>6 days left</span>
+                            </span>
                             <button class="btn-card-action">Support</button>
                         </div>
                     </div>
@@ -211,25 +205,28 @@
                 <!-- Card 2 -->
                 <div class="campaign-card">
                     <div class="campaign-image-container">
-                        <img src="clean_water_borewell.png" alt="Clean water splashing from a village hand pump" class="campaign-image">
+                        <img src="clean_water_borewell.png" alt="Fresh clean water from well pump" class="campaign-image">
                         <span class="campaign-tag">Sanitation</span>
                     </div>
                     <div class="campaign-details">
-                        <h4 class="campaign-title">Clean Water Borewells</h4>
-                        <p class="campaign-desc">Drilling two community borewells and installing filter systems in water-stressed sectors.</p>
+                        <h3 class="campaign-title">Clean Water Initiative</h3>
+                        <p class="campaign-desc">Installing sustainable water pumps and wells in remote communities to provide access to clean drinking water.</p>
                         
                         <div class="progress-container">
                             <div class="progress-bar-track">
                                 <div class="progress-bar-fill" data-progress="45"></div>
                             </div>
                             <div class="progress-stats">
-                                <span>Raised: <strong>$3,600</strong></span>
-                                <span>Goal: $8,000 (45%)</span>
+                                <span class="text-[#059669]">Raised $3,600</span>
+                                <span class="text-slate-500">of $8,000 (45%)</span>
                             </div>
                         </div>
                         
                         <div class="campaign-card-footer">
-                            <span class="campaign-days-left">⏳ 14 days left</span>
+                            <span class="campaign-days-left">
+                                <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
+                                <span>14 days left</span>
+                            </span>
                             <button class="btn-card-action">Support</button>
                         </div>
                     </div>
@@ -238,25 +235,28 @@
                 <!-- Card 3 -->
                 <div class="campaign-card">
                     <div class="campaign-image-container">
-                        <img src="vocational_skill_center.png" alt="Women learning vocational sewing skills" class="campaign-image">
+                        <img src="vocational_skill_center.png" alt="Sewing machines training class" class="campaign-image">
                         <span class="campaign-tag">Livelihood</span>
                     </div>
                     <div class="campaign-details">
-                        <h4 class="campaign-title">Vocational Skill Center</h4>
-                        <p class="campaign-desc">Equipping youth and single mothers with tailoring, coding, and craftsmanship training.</p>
+                        <h3 class="campaign-title">Women Empowerment Training</h3>
+                        <p class="campaign-desc">Skill development programs teaching tailoring and entrepreneurship to help women achieve financial independence.</p>
                         
                         <div class="progress-container">
                             <div class="progress-bar-track">
                                 <div class="progress-bar-fill" data-progress="49"></div>
                             </div>
                             <div class="progress-stats">
-                                <span>Raised: <strong>$9,800</strong></span>
-                                <span>Goal: $20,000 (49%)</span>
+                                <span class="text-[#059669]">Raised $9,800</span>
+                                <span class="text-slate-500">of $20,000 (49%)</span>
                             </div>
                         </div>
                         
                         <div class="campaign-card-footer">
-                            <span class="campaign-days-left">⏳ 22 days left</span>
+                            <span class="campaign-days-left">
+                                <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
+                                <span>22 days left</span>
+                            </span>
                             <button class="btn-card-action">Support</button>
                         </div>
                     </div>
@@ -282,20 +282,32 @@
         <div class="container volunteer-grid">
             <div class="volunteer-pitch">
                 <h2>We need your skills & passion</h2>
-                <p>Donations fund projects, but people bring them to life. Whether you are a professional educator, tech designer, or event organizer, there is a space for you here.</p>
+                <p>Donations fund projects, but people bring them to life. Join our coordinate network of volunteers making direct impacts on the ground.</p>
                 
                 <div class="volunteer-benefits">
                     <div class="benefit-item">
-                        <span class="benefit-check">✔</span>
-                        <span>Receive verifiable experience certification</span>
+                        <span class="benefit-check">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Make a meaningful difference in underserved communities</span>
                     </div>
                     <div class="benefit-item">
-                        <span class="benefit-check">✔</span>
-                        <span>Flexible hour scheduling to fit your calendar</span>
+                        <span class="benefit-check">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Connect with like-minded changemakers</span>
                     </div>
                     <div class="benefit-item">
-                        <span class="benefit-check">✔</span>
-                        <span>Join a global network of changemakers</span>
+                        <span class="benefit-check">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Gain hands-on experience in social impact work</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Flexible commitment based on your availability</span>
                     </div>
                 </div>
             </div>
@@ -305,32 +317,33 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="vol-name">Full Name</label>
-                            <input type="text" id="vol-name" class="form-control" placeholder="Jane Doe" required>
+                            <input type="text" id="vol-name" class="form-control" placeholder="Enter your name" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="vol-email">Email Address</label>
-                            <input type="email" id="vol-email" class="form-control" placeholder="jane@example.com" required>
+                            <input type="email" id="vol-email" class="form-control" placeholder="you@example.com" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="vol-skill">Core Skill / Focus Area</label>
+                        <label class="form-label" for="vol-skill">Your Skills</label>
                         <select id="vol-skill" class="form-control" required>
-                            <option value="" disabled selected>Select your skill...</option>
-                            <option value="teaching">Education & Mentorship</option>
-                            <option value="tech">Coding, Design & Web Ops</option>
-                            <option value="marketing">Social Media & Writing</option>
-                            <option value="events">Event Coordination & Logistics</option>
+                            <option value="" disabled selected>Select a skill area</option>
+                            <option value="teaching">Teaching & Education</option>
+                            <option value="tech">Technology & Development</option>
+                            <option value="design">Design & Creative</option>
+                            <option value="events">Event Management</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="vol-hours">Availability Plan</label>
+                        <label class="form-label" for="vol-hours">Availability</label>
                         <select id="vol-hours" class="form-control" required>
-                            <option value="" disabled selected>Select hours...</option>
-                            <option value="2-5">2 - 5 Hours / Week</option>
-                            <option value="5-10">5 - 10 Hours / Week</option>
-                            <option value="flex">Flexible / Project-based</option>
+                            <option value="" disabled selected>Select your availability</option>
+                            <option value="weekends">Weekends Only</option>
+                            <option value="weekdays">Weekdays (Flexible)</option>
+                            <option value="fulltime">Full-time (40+ hours/week)</option>
+                            <option value="parttime">Part-time (10-20 hours/week)</option>
                         </select>
                     </div>
                     
@@ -341,7 +354,7 @@
     </section>
 
     <!-- 5. SOCIAL PROOF & TESTIMONIALS -->
-    <section class="testimonials-sec annotated-section" id="testimonials">
+    <section class="testimonials-sec annotated-section" id="stories">
         <!-- Design Insight Marker & Card -->
         <div class="insight-marker insight-pos-top-right">5</div>
         <div class="insight-card insight-pos-top-right">
@@ -355,20 +368,24 @@
         </div>
 
         <div class="container">
-            <div class="section-title-wrap">
-                <span class="section-tag" style="color: var(--color-accent);">Testimonials</span>
-                <h2 class="section-title">Why People Trust Us</h2>
-                <p class="section-subtitle">Real feedback from donors, volunteers, and the communities we serve daily.</p>
+            <div class="campaigns-header">
+                <h2>Voices of Impact</h2>
+                <p>Stories from our community members and supporters</p>
             </div>
             
             <div class="testimonials-carousel">
                 <!-- Card 1 -->
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"The coding program at InAmigos completely changed my career path. The instructors were supportive, and they provided the laptop that enabled me to get my first developer internship."</p>
+                    <div class="quote-icon-container">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">"InAmigos gave me the opportunity to learn computers. Now I help my village access government services online."</p>
                     <div class="testimonial-user">
-                        <div class="user-avatar-placeholder">RS</div>
+                        <div class="user-avatar-placeholder">RK</div>
                         <div class="user-info">
-                            <h5>Rahul Sharma</h5>
+                            <h5>Rajesh Kumar</h5>
                             <span class="user-role">Beneficiary Student</span>
                         </div>
                     </div>
@@ -376,25 +393,37 @@
 
                 <!-- Card 2 -->
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"I love the monthly donation structure. I can see in my user dashboard exactly how my funds are allocated to clean water projects. The campaigns progress bar is update-driven and honest."</p>
+                    <div class="quote-icon-container">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">"Supporting this foundation monthly has been the most rewarding decision. I see real impact in every report they share."</p>
                     <div class="testimonial-user">
-                        <div class="user-avatar-placeholder">SM</div>
+                        <div class="user-avatar-placeholder">PS</div>
                         <div class="user-info">
-                            <h5>Sarah M.</h5>
+                            <h5>
+                                Priya Sharma
+                                <i data-lucide="heart"></i>
+                            </h5>
                             <span class="user-role">Monthly Donor Partner</span>
-                            <br><span class="donor-badge">Gold Partner</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Teaching digital skills to young kids in the village center was the highlight of my year. The onboarding tools were clean and direct, allowing me to teach my first class in week one."</p>
+                    <div class="quote-icon-container">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">"Volunteering with InAmigos connected me to incredible people working towards genuine change. It's transformative."</p>
                     <div class="testimonial-user">
-                        <div class="user-avatar-placeholder">DK</div>
+                        <div class="user-avatar-placeholder">MD</div>
                         <div class="user-info">
-                            <h5>David K.</h5>
-                            <span class="user-role">Volunteer Educator</span>
+                            <h5>Michael D'Souza</h5>
+                            <span class="user-role">Volunteer Coordinator</span>
                         </div>
                     </div>
                 </div>
@@ -406,48 +435,50 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col footer-about">
-                <div class="site-logo" style="margin-bottom: 16px;">
-                    <img src="logo_dark.jpg" alt="InAmigos Foundation Logo" style="height: 42px; object-fit: contain;">
-                </div>
-                <p>We are a registered non-profit organization dedicated to fostering positive growth through direct educational support and resource initiatives.</p>
+                <!-- Using logo_dark (white text logo) since footer background is dark slate #1C1917 -->
+                <img src="logo_dark.jpg" alt="InAmigos Foundation Logo">
+                <p style="margin-top: 16px;">Uniting minds for change through community-driven social impact initiatives across India.</p>
             </div>
             <div class="footer-col">
                 <h6>Organization</h6>
                 <ul>
-                    <li><a href="#campaigns">About Us</a></li>
-                    <li><a href="#campaigns">Financial Transparency</a></li>
+                    <li><a href="#donate">About Us</a></li>
+                    <li><a href="#campaigns">Our Team</a></li>
                     <li><a href="#campaigns">Annual Reports</a></li>
-                    <li><a href="#campaigns">Press Room</a></li>
+                    <li><a href="#campaigns">Financials</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h6>Join In</h6>
+                <h6>Get Involved</h6>
                 <ul>
-                    <li><a href="#volunteer">Volunteer Program</a></li>
-                    <li><a href="#donate">Corporate Donors</a></li>
-                    <li><a href="#donate">Sponsorship Plans</a></li>
-                    <li><a href="#donate">Community Chapters</a></li>
+                    <li><a href="#volunteer">Volunteer</a></li>
+                    <li><a href="#donate">Start a Campaign</a></li>
+                    <li><a href="#donate">Partner With Us</a></li>
+                    <li><a href="#donate">Careers</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h6>Contact</h6>
                 <ul>
                     <li>📧 info@inamigos.org</li>
-                    <li>📞 +1 (800) 555-0199</li>
-                    <li>📍 45 Wall Street, New York, NY</li>
+                    <li>📞 +91 98765 43210</li>
+                    <li>📍 Mumbai, Maharashtra, India</li>
                 </ul>
             </div>
         </div>
         
         <div class="container footer-bottom">
-            <p>&copy; 2026 InAmigos Foundation Mockup. Crafted for Task 4.</p>
-            <div style="display: flex; gap: 20px;">
+            <p>&copy; 2026 InAmigos Foundation. All rights reserved.</p>
+            <div class="footer-bottom-links">
                 <a href="#campaigns">Privacy Policy</a>
                 <a href="#campaigns">Terms of Service</a>
+                <a href="#campaigns">Cookie Policy</a>
             </div>
         </div>
     </footer>
 
+    <!-- Load Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="app.js"></script>
 </body>
 </html>
