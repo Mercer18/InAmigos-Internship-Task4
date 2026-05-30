@@ -85,10 +85,11 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #1C1917; /* Dark Slate to contrast the logo_dark (white text logo) beautifully */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: #FFFFFF; /* White to match the overall website light theme */
+    border-bottom: 1px solid var(--border-color);
     padding: 12px 0;
     transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
 }
 
 .insight-header-container {
@@ -111,12 +112,12 @@ a {
 }
 
 .badge {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     padding: 4px 10px;
     border-radius: 12px;
     font-size: 0.725rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-secondary);
 }
 
 .btn-insight-toggle {
