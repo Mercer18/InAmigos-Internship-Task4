@@ -1,6 +1,8 @@
 # Task 4: NGO Website Feature Highlight & Design Prototype
 **InAmigos Foundation Internship Project**
 
+🌎 **Live Preview URL**: [https://mercer18.github.io/InAmigos-Internship-Task4/](https://mercer18.github.io/InAmigos-Internship-Task4/)
+
 This folder contains a fully interactive design mockup and documentation highlighting **5 essential features** that should be present on an NGO (non-profit) website, outlining how these can be directly implemented on the **InAmigos Foundation** website to maximize engagement, trust, and donation conversions.
 
 ---
